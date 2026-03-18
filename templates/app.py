@@ -63,6 +63,7 @@ def register():
             password=hashed_password
         )
         try:
+            
          
 
 @app.route('/login', methods=['GET', 'POST'])
