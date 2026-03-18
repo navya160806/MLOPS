@@ -63,7 +63,10 @@ def register():
             password=hashed_password
         )
         try:
+            db.session.add(new_user)
+            db.session.commit()
             
+
          
 
 @app.route('/login', methods=['GET', 'POST'])
