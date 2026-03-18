@@ -65,10 +65,10 @@ def register():
         try:
             db.session.add(new_user)
             db.session.commit()
+            flash('Registration successful! Please log in.', 'success')
             
 
-         
-
+            return redirect(url_for('login'))
 @app.route('/login', methods=['GET', 'POST'])
 def login():
     if request.method == 'POST':
