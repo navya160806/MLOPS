@@ -63,16 +63,7 @@ def register():
             password=hashed_password
         )
         try:
-            db.session.add(new_user)
-            db.session.commit()
-            flash('Registration successful! Please log in.', 'success')
-            return redirect(url_for('login'))
-        except Exception as e:
-            db.session.rollback()
-            flash('An error occurred during registration. Please try again.', 'error')
-            return redirect(url_for('register'))
-        
-    return render_template('register.html')
+         
 
 @app.route('/login', methods=['GET', 'POST'])
 def login():
