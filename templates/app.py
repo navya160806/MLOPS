@@ -1,3 +1,5 @@
+from operator import add
+
 from flask import Flask, render_template, request, redirect, url_for, session, flash
 from flask_sqlalchemy import SQLAlchemy
 from werkzeug.security import generate_password_hash, check_password_hash
@@ -62,8 +64,7 @@ def register():
             email=email.strip(),
             password=hashed_password
         )
-        try:
-            db.session.add(new_user)
+        db.session.add(new_user)
             db.session.commit()
             flash('Registration successful! Please log in.', 'success')
             
