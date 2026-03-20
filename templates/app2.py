@@ -48,8 +48,7 @@ def register():
         if password != confirm_password:
             flash('Passwords do not match.', 'error')
             return redirect(url_for('register'))
-        
-        #check if user already exists
+       
         existing_user = User.query.filter_by(email=email).first()
         if existing_user:
             flash('Email already registered. Please log in.', 'error')
