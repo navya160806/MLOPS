@@ -57,7 +57,6 @@ def register():
         else:
 
         
-        
         #create new user
         hashed_password = generate_password_hash(password)
         new_user = User(
