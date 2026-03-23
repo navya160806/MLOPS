@@ -54,6 +54,10 @@ def register():
             flash('Email already registered. Please log in.', 'error')
             return redirect(url_for('register'))
         
+        else:
+
+        
+        
         #create new user
         hashed_password = generate_password_hash(password)
         new_user = User(
